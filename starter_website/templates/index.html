@@ -1,0 +1,96 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>World Cup Watch Guide - Home</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+    <body>
+        <div>
+            <h1>World Cup 2022</h1>
+            <p>Welcome to your 2022 World Cup viewing guide!</p>
+            <p>Please be aware that match times are displayed in GMT/UTC 0.
+                Use the drop down to select your time zone.
+                This will show you which adjustments to make so that you can be sure to not miss anything important!
+            </p>
+        </div>
+        <!-- <nav>
+            <ul id="indexPage">
+                <li>
+                    <a id="indexLink" href="./restaurants.html">Restaurants</a>
+                </li>
+                <li>
+                    <a id="indexLink" href="./menu.html">Menu</a>
+                </li>
+                <li>
+                    <a id="indexLink" href="./employees.html">Employees</a>
+                </li>
+                <li>
+                    <a id="indexLink" href="./jobs.html">Jobs</a>
+                </li>
+                <li>
+                    <a id="indexLink" href="./employeesJobs.html">Employee Duties</a>
+                </li>
+            </ul>
+        </nav> -->
+        <label for="time_zone">Time Zone</label>
+ 
+        <select id="time_zone">
+            <option value="Samoa">(GMT -11:00) Samoa</option>
+            <option value="Hawaii">(GMT -10:00) Hawaii</option>
+            <option value="Alaska">(GMT -09:00) Alaska</option>
+            <option value="Pacific Time (US &amp; Canada)">(GMT -08:00) Pacific Time (US &amp; Canada)</option>
+            <option value="Mountain Time (US &amp; Canada)">(GMT -07:00) Mountain Time (US &amp; Canada)</option>
+            <option value="Central Time (US &amp; Canada)">(GMT -06:00) Central Time (US &amp; Canada)</option>
+            <option value="Eastern Time (US &amp; Canada)">(GMT -05:00) Eastern Time (US &amp; Canada)</option>
+            <option value="Atlantic Time (Canada)">(GMT -04:00) Atlantic Time (Canada)</option>
+            <option value="Buenos Aires">(GMT -03:00) Buenos Aires</option>
+            <option value="Mid-Atlantic">(GMT -02:00) Mid-Atlantic</option>
+            <option value="Cape Verde Is.">(GMT -01:00) Cape Verde Is.</option>
+            <option value="London" selected="selected">(GMT) London</option>
+            <option value="Berlin">(GMT +01:00) Berlin</option>
+            <option value="Istanbul">(GMT +02:00) Istanbul</option>
+            <option value="Moscow">(GMT +03:00) Moscow</option>
+            <option value="Abu Dhabi">(GMT +04:00) Abu Dhabi</option>
+            <option value="Islamabad">(GMT +05:00) Islamabad</option>
+            <option value="Dhaka">(GMT +06:00) Dhaka</option>
+            <option value="Bangkok">(GMT +07:00) Bangkok</option>
+            <option value="Singapore">(GMT +08:00) Singapore</option>
+            <option value="Taipei">(GMT +08:00) Taipei</option>
+            <option value="Tokyo">(GMT +09:00) Tokyo</option>
+            <option value="Melbourne">(GMT +10:00) Melbourne</option>
+            <option value="Solomon Is.">(GMT +11:00) Solomon Is.</option>
+            <option value="Fiji">(GMT +12:00) Fiji</option>
+            <option value="Nuku'alofa">(GMT +13:00) Nuku'alofa</option>
+        </select>
+        <br>
+        <br>
+
+        <!-- insert search form here -->
+
+        <br>
+        <div>
+            <table>
+                <thead>
+                    <th>Group</th>
+                    <th>Team A</th>
+                    <th>Team B</th>
+                    <th>Location</th>
+                    <th>Time (GMT/UTC 0)</th>
+                </thead>
+                <tbody>
+                    {% for r in rows %}
+                    <tr>
+                        <td> {{ r.0 }}</td>
+                        <td> {{ r.[1] }}</td>
+                        <td> {{ r.[2] }}</td>
+                        <td> {{ r.[3] }}</td>
+                        <td> {{ r.[4] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+</html>
