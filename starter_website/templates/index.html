@@ -9,7 +9,7 @@
         <div>
             <h1>World Cup 2022</h1>
             <p>Welcome to your 2022 World Cup viewing guide!</p>
-            <p>Please be aware that match times are displayed in GMT/UTC 0.
+            <p>Please be aware that match times are displayed in <strong>GMT/UTC 0</strong>.
                 Use the drop down to select your time zone.
                 This will show you which adjustments to make so that you can be sure to not miss anything important!
             </p>
@@ -67,8 +67,9 @@
         <br>
 
         <!-- insert search form here -->
-<!--
+
         <br>
+        <p>Try hovering over a match to highlight it!</p>
         <div>
             <table>
                 <thead>
@@ -84,17 +85,17 @@
                     {% for r in rows %}
                     <tr>
                         <td> {{ r.0 }}</td>
-                        <td> {{ r.[1] }}</td>
-                        <td> {{ r.[2] }}</td>
-                        <td> {{ r.[3] }}</td>
-                        <td> {{ r.[4] }}</td>
-                        <td> {{ r.[5] }}</td>
-                        <td> {{ r.[6] }}</td>
+                        <td> {{ r.1 }}</td>
+                        <td> {{ r.2 }}</td>
+                        <td> {{ r.3 }}</td>
+                        <td> {{ r.4 }}</td>
+                        <td> {{ r.5 }}</td>
+                        <td> {{ r.6 }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-        -->
+        
         </div>
 
     </body>
