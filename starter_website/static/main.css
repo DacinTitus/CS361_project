@@ -17,6 +17,19 @@
     color: rgb(92, 168, 255);
 }
 
+div.searchForm {
+    position: left;
+    left: 10px;
+    width: 50%;
+    height: 120px;
+}
+
+div.teamsTable {
+    position: absolute;
+    right: 10px;
+    width: 30%;
+}
+
 li {
     display: inline;
     padding: 7px;
@@ -42,7 +55,7 @@ th {
 
 tr:nth-child(even) {background-color: #ebebeb;}
 
-tr:hover {background-color: rgb(249, 253, 4)}
+tr:hover {background-color: yellow}
 
 label {
     display: inline-block;
