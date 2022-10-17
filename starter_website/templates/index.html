@@ -14,25 +14,7 @@
                 This will show you which adjustments to make so that you can be sure to not miss anything important!
             </p>
         </div>
-        <!-- <nav>
-            <ul id="indexPage">
-                <li>
-                    <a id="indexLink" href="./restaurants.html">Restaurants</a>
-                </li>
-                <li>
-                    <a id="indexLink" href="./menu.html">Menu</a>
-                </li>
-                <li>
-                    <a id="indexLink" href="./employees.html">Employees</a>
-                </li>
-                <li>
-                    <a id="indexLink" href="./jobs.html">Jobs</a>
-                </li>
-                <li>
-                    <a id="indexLink" href="./employeesJobs.html">Employee Duties</a>
-                </li>
-            </ul>
-        </nav> -->
+
         <label for="time_zone">Time Zone</label>
  
         <select id="time_zone">
@@ -67,11 +49,103 @@
         <br>
 
         <!-- insert search form here -->
+        <div>
+            <div class="searchForm">
+                <form action = '/results' method = 'GET' id="searchForm">
+                    <fieldset>
+                        <legend>Search for matches by group or Nation</legend>
+                        <p id="searchPrompt1">Will you search by Group or Nation?</p>
+                        <input type="radio" id="group" name="option" value="group">
+                        <label for="group">Group</label>
+                        <input type="radio" id="nation" name="option" value="nation">
+                        <label for="nation">Nation</label>
+                        <br>
+
+                        <p id="searchPrompt2">If you selected 'Group', enter a letter from A - H.
+                            If you selected 'Nation', enter the Nation whose games you would like to view.
+                            You can use the list of Nations below for assistance.
+                        </p>
+                        <input type="text" name="criteria">
+                        <br>
+
+                        <button type="submit" name="searchButton" value="searchButton">Search</button>
+                        <button id="resetForm" type="reset" value="reset" 
+                        onclick="alertFunction()">Clear</button>
+                    </fieldset>
+                </form>
+    
+                <script>
+                    function alertFunction() {
+                        alert("Are you sure you would like to clear the entire search form?");
+                    }
+                </script>
+            </div>
+            <br>
+            <div class="teamsTable">
+                <table>
+                    <tr>
+                        <th colspan="4">World Cup Teams</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>Qatar</td>
+                            <td>Ecuador</td>
+                            <td>Senegal</td>
+                            <td>Netherlands</td>
+                        </tr>
+                        <tr>
+                            <td>England</td>
+                            <td>Iran</td>
+                            <td>USA</td>
+                            <td>Wales</td>
+                        </tr>
+                        <tr>
+                            <td>Argentina</td>
+                            <td>Saudi Arabia</td>
+                            <td>Mexico</td>
+                            <td>Poland</td>
+                        </tr>
+                        <tr>
+                            <td>France</td>
+                            <td>Australia</td>
+                            <td>Denmark</td>
+                            <td>Tunisia</td>
+                        </tr>
+                        <tr>
+                            <td>Spain</td>
+                            <td>Costa Rica</td>
+                            <td>Germany</td>
+                            <td>Japan</td>
+                        </tr>                    
+                        <tr>
+                            <td>Belgium</td>
+                            <td>Canada</td>
+                            <td>Morocco</td>
+                            <td>Croatia</td>
+                        </tr>                    
+                        <tr>
+                            <td>Brazil</td>
+                            <td>Serbia</td>
+                            <td>Switzerland</td>
+                            <td>Cameroon</td>
+                        </tr>                    
+                        <tr>
+                            <td>Portugal</td>
+                            <td>Ghana</td>
+                            <td>Uruguay</td>
+                            <td>South Korea</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
         <br>
-        <p>Try hovering over a match to highlight it!</p>
+        <br>
+
+        <p><strong>Here are all of the matches for World Cup 2022. Try hovering over a match to highlight it!</strong></p>
         <div>
-            <table>
+            <table class="matches">
                 <thead>
                     <th>Match Id</th>
                     <th>Group</th>
