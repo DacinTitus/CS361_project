@@ -18,6 +18,9 @@ webapp = Flask(__name__)
 def index():
     print("Fetching and rendering matches web page")
     db_connection = connect_to_database()
+
+    #   if request.method == 'GET' and 'searchButton' in request.form:
+        #   query = 'SELECT '
     
     if request.method == 'GET':   # display table
         query = 'SELECT * FROM matches'
@@ -25,14 +28,31 @@ def index():
         return render_template('index.html', rows = result)
 
 """
-@webapp.route('/', methods = ['POST', 'GET'])
-def matches():
-    print("Fetching and rendering matches web page")
+    if request.method == 'POST':   # display new table based on search criteria
+        query = 'SELECT * FROM matches where groupId = %s or teamA = %s or teamB = %s'
+        result = execute_query(db_connection, query).fetchall()
+        return redirect(url_for('index'))
+"""
+
+@webapp.route('/results', methods = ['POST', 'GET'])
+def results():
+    print("Fetching and rendering results web page")
     db_connection = connect_to_database()
-    
-    if request.method == 'GET':   # display table
-        query = 'SELECT * FROM matches'
-        result = execute_query(db_connection, query).fetchall()
-        return render_template('index.html', rows = result)
+    ints = ['option', 'criteria']
 
-"""
+    radio = request.args.get('option')
+    criteria = request.args.get('criteria')
+
+    if radio == 'group':
+        radio_data = 0
+    else:
+        radio_data = 1
+
+    if radio_data == 0:
+        query = "SELECT * from matches where groupId = '{}'".format(criteria)
+        
+    else:
+        query = "SELECT * from matches where teamA = '{}' or teamB = '{}'".format(criteria, criteria)
+
+    result = execute_query(db_connection, query).fetchall()
+    return render_template('results.html', rows = result)
